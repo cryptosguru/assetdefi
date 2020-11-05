@@ -116,7 +116,7 @@ impl fmt::Debug for Decimal {
             res = &res[..res.len() - 1];
         }
 
-        write!(f, "{}{}", if self.0.is_positive() { "" } else { "-" }, res)
+        write!(f, "{}{}", if self.0.is_negative() { "-" } else { "" }, res)
     }
 }
 
