@@ -416,6 +416,10 @@ impl<'r, 'l, L: Ledger> Process<'r, 'l, L> {
         debug!(self, "Resource check started");
         let mut success = true;
 
+        for (bid, bucket) in &self.locked_buckets {
+            re_warn!(self, "Dangling locked bucket: {:?}, {:?}", bid, bucket);
+            success = false;
+        }
         for (bid, bucket) in &self.buckets {
             warn!(self, "Dangling bucket: {:?}, {:?}", bid, bucket);
             success = false;
