@@ -22,5 +22,6 @@ cd "$(dirname "$0")"
 (cd examples/cross-component-call; cargo fmt)
 (cd examples/radiswap; cargo fmt)
 (cd simulator; cargo fmt)
+(cd transaction-manifest; cargo fmt)
 
 echo "All packages have been formatted."
