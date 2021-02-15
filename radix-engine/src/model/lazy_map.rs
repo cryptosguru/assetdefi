@@ -1,4 +1,3 @@
-use sbor::*;
 use scrypto::rust::collections::*;
 use scrypto::rust::vec::Vec;
 use scrypto::types::Address;
@@ -12,7 +11,7 @@ pub enum LazyMapError {
 }
 
 /// A key-value map where keys and values are lazily loaded on-demand.
-#[derive(Debug, Clone, TypeId, Encode, Decode)]
+#[derive(Debug)]
 pub struct LazyMap {
     map: HashMap<Vec<u8>, Vec<u8>>,
     auth: Address,
