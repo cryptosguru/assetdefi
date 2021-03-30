@@ -122,15 +122,6 @@ pub enum Value {
     Vault(Box<Value>),
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub enum Fields {
-    Named(Vec<Value>),
-
-    Unnamed(Vec<Value>),
-
-    Unit,
-}
-
 impl Value {
     pub const fn kind(&self) -> Type {
         match self {
